@@ -1,3 +1,11 @@
+/*
+        --------- Question: ---------
+Given two singly linked lists that intersect at some point, find the intersecting node. The lists are non-cyclical.
+For example, given A = 3 -> 7 -> 8 -> 10 and B = 99 -> 1 -> 8 -> 10, return the node with value 8.
+In this example, assume nodes with the same value are the exact same node objects.
+Do this in O(M + N) time (where M and N are the lengths of the lists) and constant space.
+        --------- End Question ---------
+*/
 class ListNode {
     int val;
     ListNode next;
@@ -9,8 +17,6 @@ class ListNode {
 
 public class DCP20{
 
-    // Time complexity - O(M+N)
-    // Space Complexity - O(1) - Constant, since only lengths are stored for any list
     public ListNode getIntersectionNode(ListNode headA, ListNode headB) {
         int l1 =0, l2= 0;
         l1 = getLength(headA);
