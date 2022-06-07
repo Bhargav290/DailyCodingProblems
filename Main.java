@@ -1,38 +1,25 @@
-/******************************************************************************
-This problem was asked by Facebook.
-Given a string of round, curly, and square open and closing brackets, return whether the brackets are balanced (well-formed).
-For example, given the string "([])[]({})", you should return true.
-Given the string "([)]" or "((()", you should return false.
-*******************************************************************************/
 import java.util.*;
-
     public class Main
     {
         public static void main(String[] args) {
-            Scanner s = new Scanner(System.in);
-            String line =s.next();
-            System.out.println(balancedParenthesis(line)?"Balanced":"Not Balanced");
+            Scanner sc = new Scanner(System.in);
+            String s = sc.next();
+            System.out.println(runLength(s));
         }
-        public static boolean balancedParenthesis(String line){
-            Stack<Character> stack = new Stack<>();
-            for(int i=0;i<line.length();i++){
-                char ch = line.charAt(i);
-                if(ch == '[' || ch == '(' || ch == '{'){
-                    stack.push(ch);
-                    continue;
-                }
-                if(stack.isEmpty())
-                    return false;
-                char verify = stack.pop();
-                switch(ch){
-                    case ')':if(verify != '(') return false;
-                        break;
-                    case '}':if(verify != '{') return false;
-                        break;
-                    case ']':if(verify != '[') return false;
-                        break;
+        public static String runLength(String s){
+            s+=" ";
+            int c = 1;
+            String new_s="";
+            for(int i=0;i<s.length()-1;i++){
+                if(s.charAt(i) == s.charAt(i+1))
+                    c++;
+                else{
+                    new_s= (""+c)+s.charAt(i);
+                    c=1;
                 }
             }
-            return stack.isEmpty();
+            return new_s;
+
         }
     }
+
