@@ -1,3 +1,10 @@
+"""
+Problem:
+Given an integer k and a string s, find the length of the longest substring that
+contains at most k distinct characters.
+For example, given s = "abcba" and k = 2, the longest substring with k distinct
+characters is "bcb".
+"""
 def longest_substring_k_unique(string: str, k: int) -> str:
     length = len(string)
     # start and end is used to create the moving window (end - start)
