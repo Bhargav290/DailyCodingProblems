@@ -1,3 +1,10 @@
+
+
+"""
+Problem:
+Given the root to a binary search tree, find the second largest node in the tree.
+"""
+
 from typing import Optional, Tuple
 
 from DataStructures.Tree import Node, BinarySearchTree
@@ -8,7 +15,6 @@ def get_largest_pair_from_current_node(node: Node) -> Tuple[Optional[Node], Node
     while node.right:
         parent = node
         node = node.right
-    # both the parent and the node is returned
     return parent, node
 
 
